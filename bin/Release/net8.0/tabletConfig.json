@@ -1,0 +1,56 @@
+{
+    "Mappings": [
+      {
+        "ButtonId": "BTN_0",
+        "Action": "KEY_LEFTALT",
+        "Modifier": "None"
+      },
+      {
+        "ButtonId": "BTN_1",
+        "Action": "KEY_LEFTSHIFT",
+        "Modifier": "None"
+      },
+      {
+        "ButtonId": "BTN_2",
+        "Action": "KEY_LEFTCTRL",
+        "Modifier": "None"
+      },
+      {
+        "ButtonId": "BTN_3",
+        "Action": "KEY_B",
+        "Modifier": "None"
+      },
+      {
+        "ButtonId": "BTN_4",
+        "Action": "KEY_TAB",
+        "Modifier": "None"
+      },
+      {
+        "ButtonId": "BTN_5",
+        "Action": "KEY_E",
+        "Modifier": "KEY_CTRL"
+      },
+      {
+        "ButtonId": "BTN_6",
+        "Action": "KEY_T",
+        "Modifier": "KEY_CTRL"
+      },
+      {
+        "ButtonId": "BTN_7",
+        "Action": "KEY_Z",
+        "Modifier": "KEY_LEFTCTRL"
+      },
+      {
+        "ButtonId": "BTN_8",
+        "Action": "None",
+        "Modifier": "None"
+
+      },
+      {
+        "ButtonId": "BTN_9",
+        "Action": "None",
+        "Modifier": "None"
+      }
+
+    ]
+  }

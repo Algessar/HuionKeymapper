@@ -1,0 +1,17 @@
+/media/elric/Projects/Huion_InputHandler/bin/Release/net8.0/Huion_InputHandler
+/media/elric/Projects/Huion_InputHandler/bin/Release/net8.0/Huion_InputHandler.deps.json
+/media/elric/Projects/Huion_InputHandler/bin/Release/net8.0/Huion_InputHandler.runtimeconfig.json
+/media/elric/Projects/Huion_InputHandler/bin/Release/net8.0/Huion_InputHandler.dll
+/media/elric/Projects/Huion_InputHandler/bin/Release/net8.0/Huion_InputHandler.pdb
+/media/elric/Projects/Huion_InputHandler/bin/Release/net8.0/Newtonsoft.Json.dll
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.csproj.AssemblyReference.cache
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.GeneratedMSBuildEditorConfig.editorconfig
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.AssemblyInfoInputs.cache
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.AssemblyInfo.cs
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.csproj.CoreCompileInputs.cache
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_In.2C7CAEE8.Up2Date
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.dll
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/refint/Huion_InputHandler.dll
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.pdb
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/Huion_InputHandler.genruntimeconfig.cache
+/media/elric/Projects/Huion_InputHandler/obj/Release/net8.0/ref/Huion_InputHandler.dll
