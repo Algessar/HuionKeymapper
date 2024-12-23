@@ -367,6 +367,61 @@ public class KeybindInterface
         public string Action { get; set; }
         public string Modifier { get; set; }
     }
+
+    #region Handling simultaneous inputStates
+
+
+// If anyone branches this, you can do work here to handle simultaneous key presses with pen and tablet buttons.
+static void BetterInput(EvDevDevice tablet, EvDevDevice pen, DeviceConfig config)
+{
+
+
+    bool tabletKeyDown = false;
+    bool penKeyDown = false;
+
+    tablet.OnKeyEvent += (sender, e) =>
+    {
+        Console.WriteLine($"Key event triggered: {e.Key}");
+        var buttonId = e.Key.ToString();
+        var mapping = config.TabletMappings.FirstOrDefault(m => m.ButtonId == buttonId);
+        if (mapping != null)
+        {
+            Console.WriteLine($"Mapped Action: {mapping.Action}, Modifier: {mapping.Modifier}");
+            if (EvDevKeyValue.KeyDown == e.Value)
+            {
+                tabletKeyDown = true;
+                TriggerInput(mapping.Action, mapping.Modifier);
+            }
+        }
+    };
+
+    pen.OnKeyEvent += (sender, e) =>
+    {
+        Console.WriteLine($"Key event triggered: {e.Key}");
+        var buttonId = e.Key.ToString();
+        var mapping = config.PenMappings.FirstOrDefault(m => m.ButtonId == buttonId);
+        if (mapping != null)
+        {
+            Console.WriteLine($"Mapped Action: {mapping.Action}");
+            if (EvDevKeyValue.KeyDown == e.Value)
+            {
+                penKeyDown = true;
+                TriggerInput(mapping.Action, mapping.Modifier);
+            }
+        }
+    };
+
+
+    //When tabletKeyDown and penKeyDown are both true, tell xdotool to press both keys.
+
+    
+
+    pen.StartMonitoring();
+    tablet.StartMonitoring();
+}
+
+
+#endregion
 }
 
 #endregion
