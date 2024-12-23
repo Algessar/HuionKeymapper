@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rMm5wzRCB+M=",
+  "dgSpecHash": "1PLFI0F/FF8=",
   "success": true,
-  "projectFilePath": "/media/elric/Projects/Huion_InputHandler/Huion_InputHandler.csproj",
+  "projectFilePath": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj",
   "expectedPackageFiles": [
     "/home/elric/.nuget/packages/atksharp/3.24.24.4/atksharp.3.24.24.4.nupkg.sha512",
     "/home/elric/.nuget/packages/cairosharp/3.24.24.4/cairosharp.3.24.24.4.nupkg.sha512",

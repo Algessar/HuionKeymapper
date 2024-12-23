@@ -1,0 +1,2 @@
+A shitty little program I wrote because Huion can't write drivers properly.
+Huion Kamvas 13 drivers do not work on Linux (mint, in my case). Screen workspace selection breaks completely. So here's a little shitty keymapper to replace their shitty software.

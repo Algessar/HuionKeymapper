@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Huion_InputHandler
-build_property.ProjectDir = /media/elric/Projects/Huion_InputHandler/
+build_property.ProjectDir = /media/elric/Projects/Huion_InputHandler/HuionKeymapper/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

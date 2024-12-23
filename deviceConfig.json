@@ -3,17 +3,17 @@
     {
       "ButtonId": "BTN_0",
       "Action": "alt",
-      "Modifier": ""
+      "Modifier": "None"
     },
     {
       "ButtonId": "BTN_1",
       "Action": "shift",
-      "Modifier": ""
+      "Modifier": "None"
     },
     {
       "ButtonId": "BTN_2",
       "Action": "ctrl",
-      "Modifier": ""
+      "Modifier": "None"
     },
     {
       "ButtonId": "BTN_3",
@@ -28,7 +28,7 @@
     {
       "ButtonId": "BTN_5",
       "Action": "e",
-      "Modifier": "ctrl"
+      "Modifier": "None"
     },
     {
       "ButtonId": "BTN_6",

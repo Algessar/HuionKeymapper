@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Huion_InputHandler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db83ec5695261748929fbd749a9bb6524dde6873")]
 [assembly: System.Reflection.AssemblyProductAttribute("Huion_InputHandler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Huion_InputHandler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

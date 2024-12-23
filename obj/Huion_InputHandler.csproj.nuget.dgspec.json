@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/elric/Projects/Huion_InputHandler/Huion_InputHandler.csproj": {}
+    "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj": {}
   },
   "projects": {
-    "/media/elric/Projects/Huion_InputHandler/Huion_InputHandler.csproj": {
+    "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/elric/Projects/Huion_InputHandler/Huion_InputHandler.csproj",
+        "projectUniqueName": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj",
         "projectName": "Huion_InputHandler",
-        "projectPath": "/media/elric/Projects/Huion_InputHandler/Huion_InputHandler.csproj",
+        "projectPath": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj",
         "packagesPath": "/home/elric/.nuget/packages/",
-        "outputPath": "/media/elric/Projects/Huion_InputHandler/obj/",
+        "outputPath": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/elric/.nuget/NuGet/NuGet.Config"
