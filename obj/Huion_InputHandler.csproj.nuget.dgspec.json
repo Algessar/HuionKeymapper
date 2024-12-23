@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj",
-        "projectName": "Huion_InputHandler",
+        "projectName": "TabletRemapper",
         "projectPath": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj",
         "packagesPath": "/home/elric/.nuget/packages/",
         "outputPath": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/obj/",
@@ -47,6 +47,12 @@
               "target": "Package",
               "version": "[3.24.24, )"
             },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )",
+              "autoReferenced": true
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -63,12 +69,27 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }

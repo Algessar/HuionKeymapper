@@ -1,0 +1,2 @@
+/media/elric/Projects/Huion_InputHandler/HuionKeymapper/publish/TabletRemapper.pdb
+/media/elric/Projects/Huion_InputHandler/HuionKeymapper/publish/TabletRemapper
