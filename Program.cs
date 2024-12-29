@@ -207,55 +207,55 @@ public class KeybindInterface
         tablet.StartMonitoring();
     }
 
-    private static void TabletInput(EvDevDevice tablet, DeviceConfig config)
-    {
-        Console.WriteLine("Setting up tablet key event...");
-        tablet.OnKeyEvent += async (sender, e) =>
-        {
-            Console.WriteLine($"Tablet key event triggered: {e.Key}");
-            var buttonId = e.Key.ToString();
+    // private static void TabletInput(EvDevDevice tablet, DeviceConfig config)
+    // {
+    //     Console.WriteLine("Setting up tablet key event...");
+    //     tablet.OnKeyEvent += async (sender, e) =>
+    //     {
+    //         Console.WriteLine($"Tablet key event triggered: {e.Key}");
+    //         var buttonId = e.Key.ToString();
 
-            inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
-            var mapping = config.TabletMappings.FirstOrDefault(m => m.ButtonId == buttonId);
-            if (mapping != null)
-            {
-                Console.WriteLine($"Mapped Action: {mapping.Action}, Modifier: {mapping.Modifier}");
-                if (EvDevKeyValue.KeyDown == e.Value)
-                {                    
-                    await Task.Run(() => TriggerKeyboardInput(mapping.Action, mapping.Modifier));
-                    // await Task.Run(() => TriggerInput(mapping.Action, mapping.Modifier));
+    //         inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
+    //         var mapping = config.TabletMappings.FirstOrDefault(m => m.ButtonId == buttonId);
+    //         if (mapping != null)
+    //         {
+    //             Console.WriteLine($"Mapped Action: {mapping.Action}, Modifier: {mapping.Modifier}");
+    //             if (EvDevKeyValue.KeyDown == e.Value)
+    //             {                    
+    //                 await Task.Run(() => TriggerKeyboardInput(mapping.Action, mapping.Modifier));
+    //                 // await Task.Run(() => TriggerInput(mapping.Action, mapping.Modifier));
 
-                }
-            }
-        };
+    //             }
+    //         }
+    //     };
 
-        tablet.StartMonitoring();
-    }
+    //     tablet.StartMonitoring();
+    // }
     private static Dictionary<string, bool> inputStates = new Dictionary<string, bool>();
 
-    private static void PenInput(EvDevDevice pen, DeviceConfig config)
-    {
-        Console.WriteLine("Setting up pen key event...");
-        pen.OnKeyEvent += async (sender, e) =>
-        {
-            Console.WriteLine($"Pen key event triggered: {e.Key}");
-            var buttonId = e.Key.ToString();
-            inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
+    // private static void PenInput(EvDevDevice pen, DeviceConfig config)
+    // {
+    //     Console.WriteLine("Setting up pen key event...");
+    //     pen.OnKeyEvent += async (sender, e) =>
+    //     {
+    //         Console.WriteLine($"Pen key event triggered: {e.Key}");
+    //         var buttonId = e.Key.ToString();
+    //         inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
 
 
-            var mapping = config.PenMappings.FirstOrDefault(m => m.ButtonId == buttonId);
-            if (mapping != null)
-            {
-                Console.WriteLine($"Mapped Action: {mapping.Action}");
-                if (EvDevKeyValue.KeyDown == e.Value)
-                {
-                    await Task.Run(() => TriggerMouseInput(mapping.Action));
-                    //await Task.Run(() => TriggerInput(mapping.Action, mapping.Modifier));
-                }
-            }
-        };
-        pen.StartMonitoring();
-    }
+    //         var mapping = config.PenMappings.FirstOrDefault(m => m.ButtonId == buttonId);
+    //         if (mapping != null)
+    //         {
+    //             Console.WriteLine($"Mapped Action: {mapping.Action}");
+    //             if (EvDevKeyValue.KeyDown == e.Value)
+    //             {
+    //                 await Task.Run(() => TriggerMouseInput(mapping.Action));
+    //                 //await Task.Run(() => TriggerInput(mapping.Action, mapping.Modifier));
+    //             }
+    //         }
+    //     };
+    //     pen.StartMonitoring();
+    // }
 
     private static void TriggerKeyboardInput(string action, string modifier)
     {
@@ -371,60 +371,142 @@ public class KeybindInterface
     #region Handling simultaneous inputStates
 
 
-// If anyone branches this, you can do work here to handle simultaneous key presses with pen and tablet buttons.
-static void BetterInput(EvDevDevice tablet, EvDevDevice pen, DeviceConfig config)
+    // If anyone branches this, you can do work here to handle simultaneous key presses with pen and tablet buttons.
+// static void BetterInput(EvDevDevice tablet, EvDevDevice pen, DeviceConfig config)
+// {
+
+
+//     bool tabletKeyDown = false;
+//     bool penKeyDown = false;
+
+//     tablet.OnKeyEvent += (sender, e) =>
+//     {
+//         Console.WriteLine($"Key event triggered: {e.Key}");
+//         var buttonId = e.Key.ToString();
+//         var mapping = config.TabletMappings.FirstOrDefault(m => m.ButtonId == buttonId);
+//         if (mapping != null)
+//         {
+//             Console.WriteLine($"Mapped Action: {mapping.Action}, Modifier: {mapping.Modifier}");
+//             if (EvDevKeyValue.KeyDown == e.Value)
+//             {
+//                 tabletKeyDown = true;
+//                 TriggerInput(mapping.Action, mapping.Modifier);
+//             }
+//         }
+//     };
+
+//     pen.OnKeyEvent += (sender, e) =>
+//     {
+//         Console.WriteLine($"Key event triggered: {e.Key}");
+//         var buttonId = e.Key.ToString();
+//         var mapping = config.PenMappings.FirstOrDefault(m => m.ButtonId == buttonId);
+//         if (mapping != null)
+//         {
+//             Console.WriteLine($"Mapped Action: {mapping.Action}");
+//             if (EvDevKeyValue.KeyDown == e.Value)
+//             {
+//                 penKeyDown = true;
+//                 TriggerInput(mapping.Action, mapping.Modifier);
+//             }
+//         }
+//     };
+
+
+//     //When tabletKeyDown and penKeyDown are both true, tell xdotool to press both keys.
+
+    
+
+//     pen.StartMonitoring();
+//     tablet.StartMonitoring();
+// }
+
+private static void TabletInput(EvDevDevice tablet, DeviceConfig config)
 {
-
-
-    bool tabletKeyDown = false;
-    bool penKeyDown = false;
-
-    tablet.OnKeyEvent += (sender, e) =>
+    Console.WriteLine("Setting up tablet key event...");
+    tablet.OnKeyEvent += async (sender, e) =>
     {
-        Console.WriteLine($"Key event triggered: {e.Key}");
+        Console.WriteLine($"Tablet key event triggered: {e.Key}");
         var buttonId = e.Key.ToString();
+        inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
+
         var mapping = config.TabletMappings.FirstOrDefault(m => m.ButtonId == buttonId);
         if (mapping != null)
         {
             Console.WriteLine($"Mapped Action: {mapping.Action}, Modifier: {mapping.Modifier}");
             if (EvDevKeyValue.KeyDown == e.Value)
             {
-                tabletKeyDown = true;
-                TriggerInput(mapping.Action, mapping.Modifier);
+                await Task.Run(() => CheckCombinedInput(config));
             }
         }
     };
 
-    pen.OnKeyEvent += (sender, e) =>
+    tablet.StartMonitoring();
+}
+
+private static void PenInput(EvDevDevice pen, DeviceConfig config)
+{
+    Console.WriteLine("Setting up pen key event...");
+    pen.OnKeyEvent += async (sender, e) =>
     {
-        Console.WriteLine($"Key event triggered: {e.Key}");
+        Console.WriteLine($"Pen key event triggered: {e.Key}");
         var buttonId = e.Key.ToString();
+        inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
+
         var mapping = config.PenMappings.FirstOrDefault(m => m.ButtonId == buttonId);
         if (mapping != null)
         {
             Console.WriteLine($"Mapped Action: {mapping.Action}");
             if (EvDevKeyValue.KeyDown == e.Value)
             {
-                penKeyDown = true;
-                TriggerInput(mapping.Action, mapping.Modifier);
+                await Task.Run(() => CheckCombinedInput(config));
             }
         }
     };
-
-
-    //When tabletKeyDown and penKeyDown are both true, tell xdotool to press both keys.
-
-    
-
     pen.StartMonitoring();
-    tablet.StartMonitoring();
+}
+
+private static void CheckCombinedInput(DeviceConfig config)
+{
+    var tabletButtonPressed = inputStates.Any(kvp => kvp.Key.StartsWith("Tablet") && kvp.Value);
+    var penButtonPressed = inputStates.Any(kvp => kvp.Key.StartsWith("Pen") && kvp.Value);
+
+    if (tabletButtonPressed && penButtonPressed)
+    {
+        var tabletMapping = config.TabletMappings.FirstOrDefault(m => inputStates[m.ButtonId]);
+        var penMapping = config.PenMappings.FirstOrDefault(m => inputStates[m.ButtonId]);
+
+        if (tabletMapping != null && penMapping != null)
+        {
+            Console.WriteLine($"Combined Action: {tabletMapping.Action} + {penMapping.Action}");
+            TriggerCombinedInput(tabletMapping.Action, penMapping.Action, tabletMapping.Modifier);
+        }
+    }
+}
+
+private static void TriggerCombinedInput(string tabletAction, string penAction, string modifier)
+{
+    string command = "xdotool key";
+    if (!string.IsNullOrEmpty(modifier) && modifier != "None")
+    {
+        command += $" {modifier}+{tabletAction}+{penAction}";
+    }
+    else
+    {
+        command += $" {tabletAction}+{penAction}";
+    }
+
+    Console.WriteLine($"Executing command: {command}");
+    Process.Start("sh", $"-c \"{command}\"");
+}
+
+    #endregion Handling simultaneous inputStates
+
+
+
 }
 
 
-#endregion
-}
-
-#endregion
+#endregion Attempt V5
 
 
 

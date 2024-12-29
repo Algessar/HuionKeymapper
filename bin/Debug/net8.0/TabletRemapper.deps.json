@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "Huion_InputHandler/1.0.0": {
+      "TabletRemapper/1.0.0": {
         "dependencies": {
           "GtkSharp": "3.24.24.4",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "Huion_InputHandler.dll": {}
+          "TabletRemapper.dll": {}
         }
       },
       "AtkSharp/3.24.24.4": {
@@ -106,7 +106,7 @@
     }
   },
   "libraries": {
-    "Huion_InputHandler/1.0.0": {
+    "TabletRemapper/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
