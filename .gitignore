@@ -1,0 +1,26 @@
+# Build outputs
+#bin/
+obj/
+
+# IDE-specific files
+.vs/
+.vscode/
+.idea/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# NuGet packages
+packages/
+
+# Local settings
+appsettings.local.json
+
+# Logs and temp files
+*.log
+*.tmp
+
+# GTK-related files (if any)
+*.glade
