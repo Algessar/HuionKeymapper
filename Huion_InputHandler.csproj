@@ -11,15 +11,13 @@
   </PropertyGroup>
 
 
-  <ItemGroup>
-      <Reference Include="EvDevSharp">
-        <HintPath>/path/to/EvDevSharp.dll</HintPath>
-      </Reference>
-    </ItemGroup>
+  <!-- <ItemGroup>
+    <ProjectReference Include="../EvDevSharp/EvDevSharp.csproj" />
+  </ItemGroup> -->
 
 
   <ItemGroup>
-  <PackageReference Include="GtkSharp" Version="3.24.24" />
+  <PackageReference Include="GtkSharp" Version="3.24.24.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>

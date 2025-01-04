@@ -45,7 +45,7 @@
           "dependencies": {
             "GtkSharp": {
               "target": "Package",
-              "version": "[3.24.24, )"
+              "version": "[3.24.24.4, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

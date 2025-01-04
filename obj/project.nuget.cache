@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "I3/BBdB7d9I=",
+  "dgSpecHash": "VUQR85udW50=",
   "success": true,
   "projectFilePath": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj",
   "expectedPackageFiles": [
@@ -15,17 +15,5 @@
     "/home/elric/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/8.0.11/microsoft.netcore.app.runtime.linux-x64.8.0.11.nupkg.sha512",
     "/home/elric/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/8.0.11/microsoft.aspnetcore.app.runtime.linux-x64.8.0.11.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "TabletRemapper depends on GtkSharp (>= 3.24.24) but GtkSharp 3.24.24 was not found. An approximate best match of GtkSharp 3.24.24.4 was resolved.",
-      "libraryId": "GtkSharp",
-      "targetGraphs": [
-        "net8.0",
-        "net8.0/linux-x64"
-      ]
-    }
-  ]
+  "logs": []
 }

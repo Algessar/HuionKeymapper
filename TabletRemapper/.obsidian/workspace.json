@@ -1,0 +1,174 @@
+{
+  "main": {
+    "id": "091cbb67b168cd35",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c97864caf810c21",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aace64b65cccfa8b",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Code flow.canvas",
+                "viewState": {
+                  "x": 2941.6870721478867,
+                  "y": -870.0027486809561,
+                  "zoom": -0.19999999999999996
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Code flow"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8451e7f741b4b563",
+    "type": "split",
+    "children": [
+      {
+        "id": "cefe105a63844f41",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "444be366e1b4da77",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "acb14f8ef8ff3fcf",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "c0d687814f9c806d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "33488c38a8ca0cc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "e8946c8b1d171b53",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47197c9e51f4d885",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Code flow.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Code flow"
+            }
+          },
+          {
+            "id": "fcdc43c6dfc4d3a4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Code flow.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Code flow"
+            }
+          },
+          {
+            "id": "f81667c39d9bf4c7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "cffa9f37d663162c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Code flow.canvas"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Code flow"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "aace64b65cccfa8b",
+  "lastOpenFiles": [
+    "TabletRemapper.md",
+    "Code flow.canvas"
+  ]
+}

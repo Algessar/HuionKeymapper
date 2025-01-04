@@ -1,0 +1,81 @@
+{
+  "TabletMappings": [
+    {
+      "ButtonId": "BTN_0",
+      "Action": "alt",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_1",
+      "Action": "shift",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_2",
+      "Action": "ctrl",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_3",
+      "Action": "b",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_4",
+      "Action": "Tab",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_5",
+      "Action": "e",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_6",
+      "Action": "s",
+      "Modifier": "ctrl"
+    },
+    {
+      "ButtonId": "BTN_7",
+      "Action": "z",
+      "Modifier": "ctrl"
+    },
+    {
+      "ButtonId": "BTN_8",
+      "Action": "None",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_9",
+      "Action": "None",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_A",
+      "Action": "1",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_B",
+      "Action": "2",
+      "Modifier": ""
+    },
+    {
+      "ButtonId": "BTN_C",
+      "Action": "3",
+      "Modifier": "None"
+    }
+  ],
+  "PenMappings": [
+    {
+      "ButtonId": "BTN_STYLUS",
+      "Action": "middleclick",
+      "Modifier": "None"
+    },
+    {
+      "ButtonId": "BTN_STYLUS2",
+      "Action": "rightclick",
+      "Modifier": "None"
+    }
+  ]
+}

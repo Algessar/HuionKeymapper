@@ -15,8 +15,9 @@ public class KeybindInterface
     static EvDevDevice keyboard;
     static EvDevDevice pen;
     static DeviceConfig config;
+    private static Dictionary<string, bool> inputStates = new Dictionary<string, bool>();
 
-    public static void Main()
+    public static void Mains()
     {
         Application.Init();
         var window = new Window("APE KEYBINDER");
@@ -99,7 +100,10 @@ public class KeybindInterface
         window.Add(vbox);
         window.ShowAll();
 
-        StartAllMonitoring(tablet, pen, config);
+        PenInput(pen, config);
+        TabletInput(tablet, config);
+
+        //StartAllMonitoring(tablet, pen, config);
         //HandleInput(tablet, pen, config);
 
         Application.Run();
@@ -231,7 +235,6 @@ public class KeybindInterface
 
     //     tablet.StartMonitoring();
     // }
-    private static Dictionary<string, bool> inputStates = new Dictionary<string, bool>();
 
     // private static void PenInput(EvDevDevice pen, DeviceConfig config)
     // {
@@ -323,25 +326,25 @@ public class KeybindInterface
 
         if (!string.IsNullOrEmpty(modifier))
             RunXdotool($"keyup {modifier}");
-    }
-    else
-    {
-        // Otherwise treat the action as a key.
-        if (!string.IsNullOrEmpty(modifier))
-            RunXdotool($"keydown {modifier}");
+        }
+        else
+        {
+            // Otherwise treat the action as a key.
+            if (!string.IsNullOrEmpty(modifier))
+                RunXdotool($"keydown {modifier}");
 
-        RunXdotool($"key {action}");
+            RunXdotool($"key {action}");
 
-        if (!string.IsNullOrEmpty(modifier))
-            RunXdotool($"keyup {modifier}");
-    }
+            if (!string.IsNullOrEmpty(modifier))
+                RunXdotool($"keyup {modifier}");
+        }
     }
 
     private static void RunXdotool(string command)
     {
-        var process = new System.Diagnostics.Process
+        var process = new Process
         {
-            StartInfo = new System.Diagnostics.ProcessStartInfo
+            StartInfo = new ProcessStartInfo
             {
                 FileName = "sh",
                 Arguments = $"-c \"{command}\"",
@@ -371,54 +374,7 @@ public class KeybindInterface
     #region Handling simultaneous inputStates
 
 
-    // If anyone branches this, you can do work here to handle simultaneous key presses with pen and tablet buttons.
-// static void BetterInput(EvDevDevice tablet, EvDevDevice pen, DeviceConfig config)
-// {
 
-
-//     bool tabletKeyDown = false;
-//     bool penKeyDown = false;
-
-//     tablet.OnKeyEvent += (sender, e) =>
-//     {
-//         Console.WriteLine($"Key event triggered: {e.Key}");
-//         var buttonId = e.Key.ToString();
-//         var mapping = config.TabletMappings.FirstOrDefault(m => m.ButtonId == buttonId);
-//         if (mapping != null)
-//         {
-//             Console.WriteLine($"Mapped Action: {mapping.Action}, Modifier: {mapping.Modifier}");
-//             if (EvDevKeyValue.KeyDown == e.Value)
-//             {
-//                 tabletKeyDown = true;
-//                 TriggerInput(mapping.Action, mapping.Modifier);
-//             }
-//         }
-//     };
-
-//     pen.OnKeyEvent += (sender, e) =>
-//     {
-//         Console.WriteLine($"Key event triggered: {e.Key}");
-//         var buttonId = e.Key.ToString();
-//         var mapping = config.PenMappings.FirstOrDefault(m => m.ButtonId == buttonId);
-//         if (mapping != null)
-//         {
-//             Console.WriteLine($"Mapped Action: {mapping.Action}");
-//             if (EvDevKeyValue.KeyDown == e.Value)
-//             {
-//                 penKeyDown = true;
-//                 TriggerInput(mapping.Action, mapping.Modifier);
-//             }
-//         }
-//     };
-
-
-//     //When tabletKeyDown and penKeyDown are both true, tell xdotool to press both keys.
-
-    
-
-//     pen.StartMonitoring();
-//     tablet.StartMonitoring();
-// }
 
 private static void TabletInput(EvDevDevice tablet, DeviceConfig config)
 {
@@ -488,11 +444,11 @@ private static void TriggerCombinedInput(string tabletAction, string penAction, 
     string command = "xdotool key";
     if (!string.IsNullOrEmpty(modifier) && modifier != "None")
     {
-        command += $" {modifier}+{tabletAction}+{penAction}";
+        command += $" {tabletAction}+{penAction}";
     }
     else
     {
-        command += $" {tabletAction}+{penAction}";
+        command += $" {tabletAction}+{modifier}";
     }
 
     Console.WriteLine($"Executing command: {command}");
