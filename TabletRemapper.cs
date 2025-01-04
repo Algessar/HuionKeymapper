@@ -6,22 +6,10 @@ using Newtonsoft.Json;
 
 namespace TabletRemapper
 {
+    // TODO: add input for pen nib (shift drag for brush size)
     
     class TabletRemapper
     {
-        public delegate string CommandDelegate(string keyState, string action);
-        public CommandDelegate CommandHandler;
-
-        private Dictionary<string, bool> inputStates = new Dictionary<string, bool>();
-
-        List<string> inputCommand = new List<string>();
-
-        bool penDown = false;
-        bool penUp = false;
-        bool tabletDown = false;
-        bool tabletUp = false;
-        
-
         private DeviceConfig config;
         private static EvDevDevice tablet;
         private static EvDevDevice pen;
@@ -45,11 +33,7 @@ namespace TabletRemapper
             pen = GetPen();
             
             BuildUI(window, config);
-            SetupDeviceMonitoring(pen, tablet);
-            // TabletInput(tablet, config);
-            // PenInput(pen, config);
-
-            // CommandHandler += StringBuilder;
+            SetupDeviceMonitoring(pen, tablet);            
 
             List<string> commandList = new List<string>();
 
@@ -278,171 +262,7 @@ namespace TabletRemapper
         {
             var clickActions = new List<string> { "leftclick", "middleclick", "rightclick", "doubleclick" };
             return clickActions.Contains(action.ToLower());
-        }
-
-        private void TabletInput(EvDevDevice tablet, DeviceConfig config)
-        {
-            Console.WriteLine("Setting up tablet key event...");
-            tablet.OnKeyEvent += (sender, e) =>
-            {
-                var buttonId = e.Key.ToString();
-                inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
-
-                var mapping = config.TabletMappings.FirstOrDefault(m => m.ButtonId == buttonId);
-                if (mapping != null)
-                {
-                    if (e.Value == EvDevKeyValue.KeyDown)
-                    {
-
-                        tabletDown = true;
-                        tabletUp = false;
-                        Console.WriteLine($"Tablet is down {tabletDown}");
-                        // Console.WriteLine($"While tabletDown is true; Tablet is up {tabletUp}");
-
-                        string command = $"keydown ";
-                        if(mapping.Modifier != "None")
-                        {
-                            command += $"{mapping.Modifier}+{mapping.Action}";     
-                            var action = $"{mapping.Action}";
-                            var modifier = $"{mapping.Modifier}";                       
-
-                            inputCommand.Add(command);
-                            inputCommand.Add(action);
-                            inputCommand.Add(modifier);
-                            //CombineCommand(inputCommand, command);
-
-                            CommandHandler?.Invoke("keydown ", command);
-                        }
-                        else
-                        {
-                            // inputCommand.Clear();
-                            command += $"{mapping.Action}";
-                            var action = $"{mapping.Action}";
-                            var modifier = $"{mapping.Modifier}";
-                            inputCommand.Add(command);
-                            inputCommand.Add(action);
-                            inputCommand.Add(modifier);
-                            CommandHandler?.Invoke("keydown ", command);
-                            // CombineCommand(inputCommand, command);
-                        }                       
-                    }
-                    if (e.Value == EvDevKeyValue.KeyUp)
-                    {
-                        tabletUp = true;
-                        tabletDown = false;
-
-                        // Console.WriteLine($"Tablet is up {tabletUp}");
-
-                        string command = $"keyup "; 
-                        if(mapping.Modifier != "None")
-                        {
-                            command += $"{mapping.Modifier}+{mapping.Action}";    
-                            var action = $"{mapping.Action}";
-                            var modifier = $"{mapping.Modifier}";
-
-                            inputCommand.Add(action);
-                            inputCommand.Add(modifier);                        
-                            
-                            inputCommand.Add(command);
-                            CommandHandler?.Invoke("keyup ", command);
-                            // CombineCommand(inputCommand, command);                            
-                        }
-                        else
-                        {
-                            
-                            command += $"{mapping.Action}";
-                            CommandHandler?.Invoke("keyup ", command);
-                            // CombineCommand(inputCommand, command);
-                        }
-                    }
-                }
-            };            
-            tablet.StartMonitoring();
-        }
-
-
-        private string StringBuilder(string keyState, string action)
-        {
-            Console.WriteLine($"Delegate Command: {action}");
-
-            for (int i = 0; i < inputCommand.Count; i++)
-            {
-                Console.WriteLine($"Command: {inputCommand[i]}");
-
-            }
-            if(penDown && tabletDown)
-            {
-                Console.WriteLine("Pen and Tablet are pressed");
-                // inputCommand.AddRange(inputCommand);
-                for (int i = 0; i < inputCommand.Count; i++)
-                {
-                    Console.WriteLine($"Command: {inputCommand[i]}");
-
-                }
-            }
-            
-            if(keyState == "keyup ")
-            {
-                inputCommand.Clear();
-                Console.WriteLine("Keyup Command, inputCommand Cleared");
-            }
-            // if(keyState == "keydown ")
-            // {
-            //     Console.WriteLine("Keydown Command");
-            //     // RunXdotool(action);
-            // }
-
-            
-
-            inputCommand.Clear();
-            return action;
-        }
-
-        private void PenInput(EvDevDevice pen, DeviceConfig config)
-        {
-            Console.WriteLine("Setting up pen key event...");
-            pen.OnKeyEvent += (sender, e) =>
-            {
-                var buttonId = e.Key.ToString();
-                inputStates[buttonId] = e.Value == EvDevKeyValue.KeyDown;
-
-                var mapping = config.PenMappings.FirstOrDefault(m => m.ButtonId == buttonId);
-                if (mapping != null)
-                {
-                    if (e.Value == EvDevKeyValue.KeyDown)
-                    {
-
-                        penDown = true;
-                        penUp = false;
-                        // Console.WriteLine($"Pen is down {penDown}");
-                        
-                        var action = TranslatePenInput(mapping.Action);
-
-                        inputCommand.Add(action);
-
-                        CommandHandler?.Invoke("", action);
-                        // CombineCommand(inputCommand ,action);
-                        // action = "click " + action translated to a number
-                        
-                    }
-                    if (e.Value == EvDevKeyValue.KeyUp)
-                    {
-                        // inputCommand.Clear();
-                        penDown = false;
-                        penUp = true;
-                        var action = TranslatePenInput(mapping.Action);
-                        inputCommand.Add(action);
-                        CommandHandler?.Invoke("", action);
-                        // Console.WriteLine($"Pen is up {penUp}");
-                        // CombineCommand(inputCommand, action);
-                                                
-                    }
-                }
-            };
-            
-            pen.StartMonitoring();
-        }
-
+        }        
         private string TranslatePenInput(string action)
         {
             string command = "click ";
@@ -465,46 +285,7 @@ namespace TabletRemapper
                 return "None";
             }
 
-        }
-
- 
-
-        private void CombineCommand(List<string> command, string action)
-        {
-            
-            if(penDown && tabletDown && inputCommand.Count > 0)
-            {
-                // string fullCommand = $"{command}";
-                string fullCommand = string.Join(" ", inputCommand);
-                Console.WriteLine("Pen and Tablet are pressed");
-                Console.WriteLine($"Full Command: {fullCommand}");
-                RunXdotool(fullCommand);
-            }
-            else if(penUp && tabletUp && inputCommand.Count > 0)
-            {
-                inputCommand.Clear();
-                string fullCommand = $"{command}";
-                fullCommand += string.Join(" ", inputCommand);
-                Console.WriteLine("Pen and Tablet are released");
-                Console.WriteLine($"Full Command: {fullCommand}");
-                RunXdotool(fullCommand);
-                inputCommand.Clear();
-            }
-            else{
-                // Logic for only one button pressed
-                if(tabletDown){
-                    RunXdotool(action);
-                }
-                else if(penDown){
-                    RunXdotool(action);
-                }
-                else{
-                    RunXdotool($"{action}");
-                }
-            }
-        }
-
-
+        } 
 
 #endregion
 
@@ -546,14 +327,3 @@ namespace TabletRemapper
 
     }
 }
-
-/*
-So what's the plan? I need to make sure tablet button and pen button can be pressed simultaneously. 
-With the pen input registering as a modifier. 
-
-if(button.IsPressed && pen.IsPressed)
-{
-    // XDoTool()
-}
-
-*/
