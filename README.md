@@ -3,7 +3,7 @@ Huion Kamvas 13 drivers are broken on Linux Mint. Screen Workspace gets locked t
 
 Notes:
 - Currently, pen buttons are limited to be mapped to mouse buttons.
-- Simultaneous input from tablet and pen does not work. Which means that ctrl-middle mouse zoom, if mapped on tablet and pen, does not work as intended. (A function exists at the bottom of the Program class where I will attempt to adress this. Eventually.)
+- Simultaneous input from tablet and pen DOES work now! :)
 
 - There is a self-contained build in bin/Release/net8.0/linux-x64/publish that should just work as is. Make sure the deviceConfig.json is in the same directory.
 
