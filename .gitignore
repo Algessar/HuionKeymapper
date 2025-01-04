@@ -1,6 +1,6 @@
 # Build outputs
 #bin/
-obj/
+.obj/
 
 # IDE-specific files
 .vs/
