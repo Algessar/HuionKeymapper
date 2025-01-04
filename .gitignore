@@ -1,6 +1,7 @@
 # Build outputs
 #bin/
 .obj/
+TabletRemapper/
 
 # IDE-specific files
 .vs/
