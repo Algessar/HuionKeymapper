@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VUQR85udW50=",
+  "dgSpecHash": "tiPtEMMOPQw=",
   "success": true,
   "projectFilePath": "/media/elric/Projects/Huion_InputHandler/HuionKeymapper/Huion_InputHandler.csproj",
   "expectedPackageFiles": [
@@ -11,9 +11,7 @@
     "/home/elric/.nuget/packages/glibsharp/3.24.24.4/glibsharp.3.24.24.4.nupkg.sha512",
     "/home/elric/.nuget/packages/gtksharp/3.24.24.4/gtksharp.3.24.24.4.nupkg.sha512",
     "/home/elric/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
-    "/home/elric/.nuget/packages/pangosharp/3.24.24.4/pangosharp.3.24.24.4.nupkg.sha512",
-    "/home/elric/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/8.0.11/microsoft.netcore.app.runtime.linux-x64.8.0.11.nupkg.sha512",
-    "/home/elric/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/8.0.11/microsoft.aspnetcore.app.runtime.linux-x64.8.0.11.nupkg.sha512"
+    "/home/elric/.nuget/packages/pangosharp/3.24.24.4/pangosharp.3.24.24.4.nupkg.sha512"
   ],
   "logs": []
 }

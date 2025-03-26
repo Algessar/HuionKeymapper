@@ -17,23 +17,23 @@
     },
     {
       "ButtonId": "BTN_3",
-      "Action": "b",
+      "Action": "f",
       "Modifier": "None"
     },
     {
       "ButtonId": "BTN_4",
-      "Action": "Tab",
-      "Modifier": "None"
+      "Action": "r",
+      "Modifier": "ctrl"
     },
     {
       "ButtonId": "BTN_5",
-      "Action": "e",
+      "Action": "r",
       "Modifier": "None"
     },
     {
       "ButtonId": "BTN_6",
-      "Action": "s",
-      "Modifier": "ctrl"
+      "Action": "q",
+      "Modifier": "alt"
     },
     {
       "ButtonId": "BTN_7",

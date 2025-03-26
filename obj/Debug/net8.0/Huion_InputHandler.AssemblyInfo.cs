@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TabletRemapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec9381a48f8c36078e02b33956321c1ef1742882")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+079ce364ae1fb67ea5b48c39aabd1d00dcbd10f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TabletRemapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TabletRemapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
